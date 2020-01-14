@@ -1,9 +1,9 @@
 {
-  "editServiceUrl": "http://localhost:5012/",
-  "mapInfoService":  "http://localhost:5016/",
-  "permalinkServiceUrl": "http://localhost:5018/",
-  "elevationServiceUrl": "http://localhost:5002/",
-  "featureReportService": "http://localhost:5020/",
+  "editServiceUrl": "",
+  "mapInfoService":  "",
+  "permalinkServiceUrl": "",
+  "elevationServiceUrl": "",
+  "featureReportService": "",
   "urlPositionFormat": "centerAndZoom",
   "urlPositionCrs": "",
   "omitUrlParameterUpdates": false,
@@ -62,6 +62,11 @@
       "code": "EPSG:31983",
       "proj": "+proj=utm +zone=23 +south +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
       "label": "SIRGAS 2000 / UTM zone 23S"
+    },
+    {
+      "code": "EPSG:3004",
+      "proj": "+proj=tmerc +lat_0=0 +lon_0=15 +k=0.9996 +x_0=2520000 +y_0=0 +ellps=intl +towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68 +units=m +no_defs",
+      "label": "Monte Mario / Italy zone 2"
     }
   ],
   "plugins": {
@@ -116,18 +121,16 @@
                   {"key": "Identify", "icon": "identify_region", "mode": "Region"},
                   {"key": "Measure", "icon": "measure"},
                   {"key": "Redlining", "icon": "draw"},
-                  {"key": "Editing", "icon": "editing"},
                   {"key": "DxfExport", "icon": "dxfexport"},
                   {"key": "RasterExport", "icon": "rasterexport"}
                 ]},
-                {"key": "Print", "icon": "print"},
-                {"key": "Help", "icon": "info"}
+                {"key": "Print", "icon": "print"}
               ],
               "searchOptions": {
                 "minScaleDenom": 1000,
                 "showProviderSelection": true,
                 "providerSelectionAllowAll": true,
-                "zoomToLayers": false,
+                "zoomToLayers": true,
                 "showProvidersInPlaceholder": false
               },
               "appMenuClearsTask": true,
@@ -151,7 +154,6 @@
           "cfg": {
             "displayCoordinates": false,
             "displayScales": false,
-            "viewertitleUrl": "http://qgis.org/",
             "termsUrl":  "http://qgis.org/"
           }
         },
@@ -333,13 +335,11 @@
                   {"key": "Identify", "icon": "identify_region", "mode": "Region"},
                   {"key": "Measure", "icon": "measure"},
                   {"key": "Redlining", "icon": "draw"},
-                  {"key": "Editing", "icon": "editing"},
                   {"key": "DxfExport", "icon": "dxfexport"},
                   {"key": "RasterExport", "icon": "rasterexport"}
                 ]},
                 {"key": "Print", "icon": "print"},
-                {"key": "Help", "icon": "info"},
-                {"key": "ExternalLink", "icon": "link", "url": "http://example.com?extent=$e$"}
+                {"key": "ExternalLink", "icon": "link", "url": "http://www.sibillini.net/il_parco/portaleCartografico/index.php?cuore=$t$"}
               ],
               "toolbarItems": [
                 {"key": "Measure", "mode": "LineString", "icon": "measure_line"},
@@ -351,7 +351,7 @@
                 "minScaleDenom": 1000,
                 "showProviderSelection": true,
                 "providerSelectionAllowAll": true,
-                "zoomToLayers": false,
+                "zoomToLayers": true,
                 "showProvidersInPlaceholder": false
               },
               "appMenuClearsTask": true,
@@ -362,7 +362,6 @@
         {
           "name": "BottomBar",
           "cfg": {
-            "viewertitleUrl": "http://qgis.org/",
             "termsUrl":  "http://qgis.org/"
           }
         },
@@ -432,10 +431,6 @@
             "inlinePrintOutput": false,
             "gridInitiallyEnabled": false
           }
-        },
-        {
-          "name": "Help",
-          "mapClickAction": "identify"
         },
         {
           "name": "MapCopyright",
